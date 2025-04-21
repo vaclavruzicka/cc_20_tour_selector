@@ -18,7 +18,11 @@ function App() {
 
   //Filters the tours based on the selected destination.
   const filteredTours = selectedDestination
-    ? tours.filter((tour) => tour.name === selectedDestination) : tours;
+  ? tours.filter((tour) => {
+      const words = tour.name.split(" ");
+      return words[2] === selectedDestination;
+    })
+  : tours;
 
   
   //Calling upon destination selector and tour filter.
