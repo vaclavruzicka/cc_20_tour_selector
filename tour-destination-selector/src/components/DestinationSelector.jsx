@@ -12,10 +12,10 @@ const DestinationSelector = ({ tours, onDestinationChange }) => {
             tours.map((tour) => {
 
                 //Splits the tour name into two words.
-                const words = tour.name.split("")
+                const words = tour.name.split(" ")
 
                 //Extracts a third word, and uses an empty string if the thrid word does not exist.
-                return words[2] || ""
+                return words[2] || " "
 
                 //Removes any empty stings.
             }).filter((destination) => destination)
