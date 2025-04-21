@@ -19,9 +19,18 @@ const TourFilter = ({ tours, setTours, onRemove }) => {
             if (!response.ok) {
                 throw new Error("Error fetching tours.")
             }
-            const data = await response.json()
-            setTours(data)
-        } catch (error) {
+            const contentType = 
+            response.headers.get("content-type")
+            if (contentType && contentType.includes("application/json")) {
+                const data = await response.json()
+                setTours(data)
+            } else {
+                    const text = await response.text()
+                    console.error("Unexpected Response:", text)
+                    setError(true)
+                }
+            }
+         catch (error) {
             setError(true)
             console.error("Error fetching tours:", error)
         } finally {

@@ -13,7 +13,7 @@ function App() {
   
   //Allows for a tour to be removed.
   const onRemove = (id) => {
-    setTours((prevTours) => prevTours.filter((tour) = tour.id !== id))
+    setTours((prevTours) => prevTours.filter((tour) => tour.id !== id))
   }
 
   //Filters the tours based on the selected destination.
