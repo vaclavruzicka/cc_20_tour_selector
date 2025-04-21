@@ -1,9 +1,10 @@
 //App.jsx
 
-//Imports use state, TourFilter, and DestinationSelector
+//Imports use state, TourFilter, DestinationSelector, and Styles.
 import { useState } from "react"
 import TourFilter from "./components/Gallery"
 import DestinationSelector from "./components/DestinationSelector"
+import "./styles/styles.css"
 
 //Creating a function that allows the website to run.
 function App() {
